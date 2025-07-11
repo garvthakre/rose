@@ -143,36 +143,109 @@ const  Valentine = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center pt-20">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-pink-400 via-red-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
-                  Love, Luxury & Romance
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-pink-200 leading-relaxed">
-                Discover an exclusive collection of romantic moments and intimate stories. Premium content crafted for those who appreciate the finer things in love.
+   {/* Hero Section */}
+      <section id="hero" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        {/* Enhanced Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/30 to-red-900/40"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-red-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <div className="inline-block">
+                  <span className="bg-gradient-to-r from-pink-400 to-purple-400 text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide uppercase shadow-lg">
+                    🔥 Premium Content
+                  </span>
+                </div>
+                <h1 className="text-6xl md:text-8xl font-extrabold leading-tight">
+                  <span className="bg-gradient-to-r from-pink-300 via-purple-300 to-pink-400 bg-clip-text text-transparent animate-gradient">
+                    Sensual
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent animate-gradient">
+                    Elegance
+                  </span>
+                </h1>
+                <div className="h-1 w-24 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full"></div>
+              </div>
+              
+              <p className="text-xl md:text-2xl text-pink-100 leading-relaxed max-w-lg">
+                Experience intimate artistry and exclusive content crafted for discerning admirers. Where sophistication meets desire in perfect harmony.
               </p>
-              <div className="flex gap-6">
-                <button className="bg-gradient-to-r from-pink-500 to-red-500 text-white px-8 py-4 rounded-full font-semibold hover:from-pink-600 hover:to-red-600 transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
-                  💕 Subscribe Now
+              
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <button className="group relative bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-pink-600 hover:via-purple-600 hover:to-pink-700 transition-all duration-500 hover:-translate-y-2 shadow-2xl hover:shadow-pink-500/25 transform hover:scale-105">
+                  <span className="relative z-10 flex items-center gap-2">
+                    💎 Subscribe & Unlock
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
                 </button>
-                <button className="bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 text-white px-8 py-4 rounded-full font-semibold hover:bg-opacity-20 transition-all duration-300 hover:-translate-y-2">
-                  View Gallery
+                <button className="group bg-white/5 backdrop-blur-xl border border-white/10 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 shadow-xl">
+                  <span className="flex items-center gap-2">
+                    🎭 Preview Gallery
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </span>
                 </button>
               </div>
-            </div>
-            <div className="flex justify-center">
-              <div className="bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 rounded-3xl p-8 hover:bg-opacity-20 transition-all duration-300 hover:-translate-y-3">
-                <div className="w-48 h-48 bg-gradient-to-br from-pink-400 to-red-500 rounded-full flex items-center justify-center text-6xl font-bold text-white shadow-2xl">
-                  VS
+              
+              <div className="flex items-center gap-8 pt-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-pink-200 text-sm">Live Now</span>
                 </div>
-                <div className="mt-6 text-center">
-                  <h3 className="text-2xl font-bold text-pink-200">Valentine's Special</h3>
-                  <p className="text-pink-300 mt-2">Exclusive Romance Collection</p>
+                <div className="text-pink-200 text-sm">
+                  <span className="font-semibold text-white">2.4K+</span> Active Subscribers
+                </div>
+                <div className="text-pink-200 text-sm">
+                  <span className="font-semibold text-white">4.9★</span> Rated
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex justify-center relative">
+              <div className="relative group">
+                {/* Glowing border effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-500 animate-pulse"></div>
+                
+                {/* Main card */}
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 hover:bg-white/15 transition-all duration-500 hover:-translate-y-4 shadow-2xl">
+                  {/* Profile image placeholder */}
+                  <div className="relative">
+                    <div className="w-64 h-80 bg-gradient-to-br from-pink-400 via-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-7xl font-bold text-white shadow-2xl relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                      <div className="relative z-10 text-center">
+                        <div className="text-8xl mb-2">💋</div>
+                        <div className="text-2xl font-light tracking-widest">EXCLUSIVE</div>
+                      </div>
+                      {/* Shimmer effect */}
+                      <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                    </div>
+                    
+                    {/* Floating elements */}
+                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg animate-bounce">
+                      🔥
+                    </div>
+                    <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white text-lg shadow-lg animate-pulse">
+                      💎
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8 text-center space-y-4">
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
+                      Premium Collection
+                    </h3>
+                    <p className="text-pink-200 text-lg">Intimate • Artistic • Exclusive</p>
+                    <div className="flex justify-center gap-4 pt-2">
+                      <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-300"></div>
+                      <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse delay-700"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
