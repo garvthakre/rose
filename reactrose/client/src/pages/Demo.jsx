@@ -215,7 +215,7 @@ const CreatorPortfolio = () => {
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-lg shadow-pink-500/10' : 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md'} border-b border-gray-200/50 dark:border-gray-700/50`}>
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
-            Sites by Garv ✨
+            Garv Builds ✨
           </div>
           
           {/* Desktop Menu */}
