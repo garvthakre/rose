@@ -21,6 +21,66 @@ const CreatorWebsite = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Gallery images data
+  const galleryImages = [
+    {
+      id: 1,
+      src: "/src/assets/girl-5864172_1280.jpg",
+      title: "Elegant Portrait",
+      type: "photo",
+      premium: false
+    },
+    {
+      id: 2,
+      src: "/src/assets/pexels-andrea-musto-135941147-20425087.jpg",
+      title: "Artistic Vision",
+      type: "photo",
+      premium: true
+    },
+    {
+      id: 3,
+      src: "/src/assets/pexels-caio-mantovani-97605853-13815186.jpg",
+      title: "Behind the Scenes",
+      type: "video",
+      premium: false
+    },
+    {
+      id: 4,
+      src: "/src/assets/pexels-cottonbro-3778934.jpg",
+      title: "Exclusive Session",
+      type: "photo",
+      premium: true
+    },
+    {
+      id: 5,
+      src: "/src/assets/pexels-cottonbro-5645101.jpg",
+      title: "Personal Moment",
+      type: "photo",
+      premium: true
+    },
+    {
+      id: 6,
+      src: "/src/assets/pexels-cottonbro-8732107.jpg",
+      title: "Live Stream",
+      type: "video",
+      premium: false
+    },
+    {
+      id: 7,
+      src: "/src/assets/pexels-joshua-roberts-212557837-14132594.jpg",
+      title: "Special Collection",
+      type: "photo",
+      premium: true
+    },
+    {
+      id: 8,
+      src: "/src/assets/pexels-ryanpilat1-12284882.jpg",
+      title: "Intimate Gallery",
+      type: "photo",
+      premium: true
+    }
+  ];
+
   const premiumContent = [
     { 
       title: "Intimate Gallery", 
@@ -79,15 +139,6 @@ const CreatorWebsite = () => {
     { item: "Flirty Compliment", amount: "$15", icon: "😘", description: "Make me blush" },
     { item: "Desire Fulfillment", amount: "$35", icon: "🔥", description: "Heat things up" },
     { item: "Ultimate Fantasy", amount: "$100", icon: "👑", description: "VIP treatment" }
-  ];
-
-  const galleryItems = [
-    { type: "photo", locked: true, preview: "🌹" },
-    { type: "video", locked: true, preview: "💫" },
-    { type: "photo", locked: false, preview: "✨" },
-    { type: "video", locked: true, preview: "🔥" },
-    { type: "photo", locked: true, preview: "💎" },
-    { type: "video", locked: false, preview: "🖤" }
   ];
 
   return (
@@ -280,34 +331,53 @@ const CreatorWebsite = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {galleryItems.map((item, index) => (
+            {galleryImages.map((image, index) => (
               <div 
-                key={index} 
+                key={image.id} 
                 className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
                 onMouseEnter={() => setIsHovered(index)}
                 onMouseLeave={() => setIsHovered(null)}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-red-900/50 to-pink-900/50 backdrop-blur-sm"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-6xl">{item.preview}</div>
-                </div>
+                <img 
+                  src={image.src} 
+                  alt={image.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-red-900/30 to-pink-900/30"></div>
                 
-                {item.locked && (
-                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center">
+                {/* Video play icon */}
+                {image.type === 'video' && (
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-black/70 rounded-full flex items-center justify-center">
+                    <Play className="w-4 h-4 text-white" />
+                  </div>
+                )}
+                
+                {/* Premium badge */}
+                {image.premium && (
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full text-xs font-bold text-black">
+                    VIP
+                  </div>
+                )}
+                
+                {/* Premium lock overlay */}
+                {image.premium && (
+                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center group-hover:bg-black/50 transition-colors duration-300">
                     <div className="text-center">
                       <Lock className="w-8 h-8 mx-auto mb-2 text-red-400" />
-                      <div className="text-sm text-gray-300">Unlock to view</div>
+                      <div className="text-sm text-gray-300">Premium Content</div>
                     </div>
                   </div>
                 )}
                 
+                {/* Hover overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300 ${
                   isHovered === index ? 'opacity-100' : 'opacity-0'
                 }`}>
                   <div className="absolute bottom-4 left-4 right-4">
+                    <div className="text-white font-semibold mb-2">{image.title}</div>
                     <button className="w-full bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 py-2 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
                       <Eye className="w-4 h-4" />
-                      {item.locked ? 'Unlock' : 'View'}
+                      {image.premium ? 'Unlock' : 'View'}
                     </button>
                   </div>
                 </div>

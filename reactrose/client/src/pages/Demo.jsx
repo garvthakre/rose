@@ -15,7 +15,8 @@ const CreatorPortfolio = () => {
       tagline: "For fans who pay to play",
       color: "from-pink-500 to-rose-600",
       preview: "bg-gradient-to-br from-pink-400 via-rose-500 to-red-500",
-      accent: "pink"
+      accent: "pink",
+      route: "/birthday"
     },
     {
       name: "Girly / Pastel",
@@ -23,7 +24,8 @@ const CreatorPortfolio = () => {
       tagline: "Sweet but spicy",
       color: "from-purple-400 to-pink-400",
       preview: "bg-gradient-to-br from-purple-300 via-pink-300 to-rose-300",
-      accent: "purple"
+      accent: "purple",
+      route: "/genz"
     },
     {
       name: "MILF / Luxury Seductress",
@@ -31,7 +33,8 @@ const CreatorPortfolio = () => {
       tagline: "Sophistication meets seduction",
       color: "from-red-600 to-rose-800",
       preview: "bg-gradient-to-br from-red-500 via-rose-700 to-red-800",
-      accent: "red"
+      accent: "red",
+      route: "/luxury"
     },
     {
       name: "Anime Cosplay / Waifu",
@@ -39,7 +42,8 @@ const CreatorPortfolio = () => {
       tagline: "Your favorite fantasy",
       color: "from-blue-500 to-purple-600",
       preview: "bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600",
-      accent: "blue"
+      accent: "blue",
+      route: "/hentai"
     },
     {
       name: "Halloween / Seasonal",
@@ -47,7 +51,8 @@ const CreatorPortfolio = () => {
       tagline: "Spooky and seductive",
       color: "from-orange-500 to-red-600",
       preview: "bg-gradient-to-br from-orange-400 via-red-500 to-orange-600",
-      accent: "orange"
+      accent: "orange",
+      route: "/christmas"
     },
     {
       name: "Premium Seller / High Ticket",
@@ -55,7 +60,8 @@ const CreatorPortfolio = () => {
       tagline: "Luxury that converts",
       color: "from-yellow-400 to-orange-500",
       preview: "bg-gradient-to-br from-yellow-300 via-orange-400 to-amber-500",
-      accent: "yellow"
+      accent: "yellow",
+      route: "/bdsm"
     },
     {
       name: "Dark Mode / After Hours",
@@ -63,7 +69,8 @@ const CreatorPortfolio = () => {
       tagline: "Mysterious and magnetic",
       color: "from-gray-800 to-black",
       preview: "bg-gradient-to-br from-gray-700 via-gray-800 to-black",
-      accent: "gray"
+      accent: "gray",
+      route: "/milf"
     },
     {
       name: "New Year's Eve Fantasy",
@@ -71,7 +78,17 @@ const CreatorPortfolio = () => {
       tagline: "Champagne dreams",
       color: "from-yellow-300 to-amber-500",
       preview: "bg-gradient-to-br from-yellow-200 via-amber-400 to-yellow-500",
-      accent: "amber"
+      accent: "amber",
+      route: "/newyear"
+    },
+    {
+      name: "Valentine's Romance",
+      emoji: "💕",
+      tagline: "Love and luxury combined",
+      color: "from-pink-400 to-red-500",
+      preview: "bg-gradient-to-br from-pink-300 via-red-400 to-rose-500",
+      accent: "pink",
+      route: "/valentine"
     }
   ];
 
@@ -176,11 +193,22 @@ const CreatorPortfolio = () => {
   };
 
   const handleContactClick = () => {
-    console.log('Contact clicked');
+    window.open('https://t.me/garvbuilds', '_blank');
   };
 
   const handleDemoClick = (themeName) => {
-    console.log(`Demo clicked for ${themeName}`);
+    const theme = themes.find(t => t.name === themeName);
+    if (theme && theme.route) {
+      // In a real React Router setup, you would use navigate(theme.route)
+      // For this demo, we'll simulate the navigation
+      window.location.href = theme.route;
+    }
+  };
+
+  const handleViewDemo = (route) => {
+    // In a real React Router setup, you would use navigate(route)
+    // For this demo, we'll simulate the navigation
+    window.location.href = route;
   };
 
   return (
@@ -393,7 +421,7 @@ const CreatorPortfolio = () => {
                   </div>
                   <div className="absolute bottom-6 right-6">
                     <button 
-                      onClick={() => handleDemoClick(theme.name)}
+                      onClick={() => handleViewDemo(theme.route)}
                       className="px-6 py-3 bg-white/95 backdrop-blur-sm text-gray-800 rounded-full text-sm font-semibold hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg"
                     >
                       <Eye className="w-4 h-4 inline mr-2" />
@@ -405,7 +433,7 @@ const CreatorPortfolio = () => {
                   <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{theme.name}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{theme.tagline}</p>
                   <button 
-                    onClick={() => handleDemoClick(theme.name)}
+                    onClick={() => handleViewDemo(theme.route)}
                     className={`w-full py-4 bg-gradient-to-r ${theme.color} text-white font-bold rounded-xl hover:shadow-xl hover:shadow-pink-500/25 transition-all duration-300 transform hover:scale-105`}
                   >
                     🔗 View Live Demo

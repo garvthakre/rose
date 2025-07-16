@@ -73,27 +73,125 @@ const NYECreatorWebsite = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const contentTabs = {
-    exclusive: [
-      { title: "Midnight Stripping", preview: "🔥 Full undress show", price: "$25", duration: "12 min", locked: true, hot: true },
-      { title: "Champagne Bath", preview: "💦 Wet & wild", price: "$35", duration: "15 min", locked: true, hot: true },
-      { title: "Silk & Lace", preview: "👄 Lingerie tease", price: "$20", duration: "8 min", locked: false, hot: false },
-      { title: "Golden Hour", preview: "✨ Glitter body paint", price: "$40", duration: "18 min", locked: true, hot: true },
-      { title: "After Dark Secrets", preview: "🌙 Your fantasies", price: "$50", duration: "25 min", locked: true, hot: true },
-      { title: "NYE Countdown Strip", preview: "🕛 Strip every hour", price: "$60", duration: "30 min", locked: true, hot: true }
-    ],
-    live: [
-      { title: "Live Now: Bedroom", preview: "🔴 Currently online", price: "Free", viewers: "2,847", locked: false },
-      { title: "Private Show Available", preview: "💋 Just for you", price: "$5/min", viewers: "1-on-1", locked: false },
-      { title: "Group Show Starting", preview: "👥 Join the fun", price: "$2/min", viewers: "Max 50", locked: false }
-    ],
-    customs: [
-      { title: "Personal Message", preview: "💌 Your name moaned", price: "$15", delivery: "24h", locked: false },
-      { title: "Custom Photo Set", preview: "📸 Your requests", price: "$45", delivery: "48h", locked: false },
-      { title: "Girlfriend Experience", preview: "💕 Day of texting", price: "$80", delivery: "Same day", locked: false },
-      { title: "Video Call", preview: "📹 Face to face", price: "$100", delivery: "Schedule", locked: false }
-    ]
-  };
+ const contentTabs = {
+  exclusive: [
+    {
+      title: "Midnight Stripping",
+      preview: "🔥 Full undress show",
+      price: "$25",
+      duration: "12 min",
+      locked: false,
+      hot: true,
+      image: "/src/assets/girl-5864172_1280.jpg"
+    },
+    {
+      title: "Champagne Bath",
+      preview: "💦 Wet & wild",
+      price: "$35",
+      duration: "15 min",
+      locked: true,
+      hot: true,
+      image: "src/assets/pexels-andrea-musto-135941147-20425087.jpg"
+    },
+    {
+      title: "Silk & Lace",
+      preview: "👄 Lingerie tease",
+      price: "$20",
+      duration: "8 min",
+      locked: false,
+      hot: false,
+      image: "/src/assets/pexels-caio-mantovani-97605853-13815186.jpg"
+    },
+    {
+      title: "Golden Hour",
+      preview: "✨ Glitter body paint",
+      price: "$40",
+      duration: "18 min",
+      locked: true,
+      hot: true,
+      image: "/src/assets/pexels-cottonbro-3778934.jpg"
+    },
+    {
+      title: "After Dark Secrets",
+      preview: "🌙 Your fantasies",
+      price: "$50",
+      duration: "25 min",
+      locked: true,
+      hot: true,
+      image: "/src/assets/pexels-cottonbro-5645101.jpg"
+    },
+    {
+      title: "NYE Countdown Strip",
+      preview: "🕛 Strip every hour",
+      price: "$60",
+      duration: "30 min",
+      locked: true,
+      hot: true,
+      image: "/src/assets/pexels-cottonbro-8732107.jpg"
+    }
+  ],
+  live: [
+    {
+      title: "Live Now: Bedroom",
+      preview: "🔴 Currently online",
+      price: "Free",
+      viewers: "2,847",
+      locked: false,
+      image: "/src/assets/pexels-joshua-roberts-212557837-14132594.jpg"
+    },
+    {
+      title: "Private Show Available",
+      preview: "💋 Just for you",
+      price: "$5/min",
+      viewers: "1-on-1",
+      locked: false,
+      image: "/src/assets/pexels-ryanpilat1-12284882.jpg"
+    },
+    {
+      title: "Group Show Starting",
+      preview: "👥 Join the fun",
+      price: "$2/min",
+      viewers: "Max 50",
+      locked: false,
+      image: "/src/assets/pexels-cottonbro-5645101.jpg"
+    }
+  ],
+  customs: [
+    {
+      title: "Personal Message",
+      preview: "💌 Your name moaned",
+      price: "$15",
+      delivery: "24h",
+      locked: false,
+      image: "/src/assets/pexels-caio-mantovani-97605853-13815186.jpg"
+    },
+    {
+      title: "Custom Photo Set",
+      preview: "📸 Your requests",
+      price: "$45",
+      delivery: "48h",
+      locked: false,
+      image: "/src/assets/pexels-cottonbro-3778934.jpg"
+    },
+    {
+      title: "Girlfriend Experience",
+      preview: "💕 Day of texting",
+      price: "$80",
+      delivery: "Same day",
+      locked: false,
+      image: "src/assets/pexels-andrea-musto-135941147-20425087.jpg"
+    },
+    {
+      title: "Video Call",
+      preview: "📹 Face to face",
+      price: "$100",
+      delivery: "Schedule",
+      locked: false,
+      image: "/src/assets/girl-5864172_1280.jpg"
+    }
+  ]
+};
+
 
   const tipMenuItems = [
     { price: "$5", item: "Blow a Kiss", icon: "💋", description: "Send me a sweet kiss" },
@@ -320,24 +418,41 @@ const NYECreatorWebsite = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {contentTabs[activeTab].map((item, index) => (
               <div key={index} className="group relative bg-gradient-to-b from-amber-900/20 to-black/50 rounded-2xl overflow-hidden border border-amber-500/20 backdrop-blur-sm transform hover:scale-105 transition-all duration-300 hover:border-amber-500/40">
                 {item.hot && (
-                  <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10 animate-pulse">
+                  <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold z-20 animate-pulse">
                     🔥 HOT
                   </div>
                 )}
                 
-                <div className="aspect-video bg-gradient-to-br from-amber-500/20 to-yellow-500/20 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    {item.locked ? (
-                      <Lock className="w-12 h-12 text-amber-400 group-hover:animate-pulse" />
-                    ) : (
-                      <Play className="w-12 h-12 text-amber-400 group-hover:animate-pulse" />
-                    )}
+                <div className="aspect-video relative overflow-hidden">
+                  {/* Background Image */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    style={{
+                      backgroundImage: item.image ? `url(${item.image})` : 
+                        `linear-gradient(135deg, rgba(251,191,36,0.3) 0%, rgba(245,158,11,0.3) 100%), url('https://images.unsplash.com/photo-1534188753412-5de0edec9960?w=400&h=300&fit=crop&crop=face')`
+                    }}
+                  />
+                  
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/80 group-hover:via-black/30 group-hover:to-black/10 transition-all duration-300"></div>
+                  
+                  {/* Lock/Play Icon */}
+                  <div className="absolute inset-0 flex items-center justify-center z-10">
+                    <div className="bg-black/60 backdrop-blur-sm rounded-full p-4 border border-amber-500/30 group-hover:bg-black/40 group-hover:border-amber-500/50 transition-all duration-300">
+                      {item.locked ? (
+                        <Lock className="w-8 h-8 text-amber-400 group-hover:text-amber-300 group-hover:animate-pulse" />
+                      ) : (
+                        <Play className="w-8 h-8 text-amber-400 group-hover:text-amber-300 group-hover:animate-pulse" />
+                      )}
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  
+                  {/* Shimmer Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 
                 <div className="p-6">
@@ -353,8 +468,11 @@ const NYECreatorWebsite = () => {
                       {item.viewers && (
                         <span className="text-amber-200/60 text-sm">{item.viewers}</span>
                       )}
+                      {item.delivery && (
+                        <span className="text-amber-200/60 text-sm">{item.delivery}</span>
+                      )}
                     </div>
-                    <button className="bg-gradient-to-r from-amber-500 to-yellow-600 text-black px-6 py-2 rounded-full font-bold hover:from-yellow-400 hover:to-amber-500 transition-all duration-300">
+                    <button className="bg-gradient-to-r from-amber-500 to-yellow-600 text-black px-6 py-2 rounded-full font-bold hover:from-yellow-400 hover:to-amber-500 transition-all duration-300 shadow-lg hover:shadow-amber-500/25">
                       {item.locked ? 'UNLOCK' : activeTab === 'live' ? 'JOIN' : 'ORDER'}
                     </button>
                   </div>
