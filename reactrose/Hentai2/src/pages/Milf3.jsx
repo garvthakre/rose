@@ -94,39 +94,63 @@ const LewdWaifuUniverse = () => {
             </div>
           </section>
 
-          {/* NSFW Grid Section */}
-          <section className="container mx-auto px-4 py-12">
-            <h2 className="text-3xl font-anime mb-8 text-center">Exclusive Lewd Content</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                { id: 1, caption: 'Maid With No Panties' },
-                { id: 2, caption: 'Hentai Schoolgirl Bends Over' },
-                { id: 3, caption: 'I Moaned While Cosplaying Your Waifu' },
-                { id: 4, caption: 'Bunny Girl Tease' },
-                { id: 5, caption: 'Succubus Temptation' },
-                { id: 6, caption: 'Neko Nip Slip' }
-              ].map(item => (
-                <div 
-                  key={item.id}
-                  className="relative rounded-xl overflow-hidden aspect-square cursor-pointer group"
-                  onMouseEnter={() => setHoveredItem(item.id)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                >
-                  <div className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${hoveredItem === item.id ? 'opacity-100' : 'opacity-0'}`}>
-                    <div className="text-4xl animate-bounce">🔓</div>
-                  </div>
-                  <img 
-                    src={`/images/thumb-${item.id}.jpg`} 
-                    alt="" 
-                    className={`w-full h-full object-cover transition-transform duration-300 ${hoveredItem === item.id ? 'scale-110' : 'scale-100'}`}
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                    <p className="font-bold">{item.caption}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+         <section className="container mx-auto px-4 py-12">
+  <h2 className="text-3xl font-anime mb-8 text-center">Exclusive Lewd Content</h2>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {[
+      {
+        id: 1,
+        caption: 'Maid With No Panties', 
+        src: "/src/assets/girl-5864172_1280.jpg"
+      },
+      {
+        id: 2,
+        caption: 'Hentai Schoolgirl Bends Over', 
+        src: "src/assets/pexels-andrea-musto-135941147-20425087.jpg"
+      },
+      {
+        id: 3,
+        caption: 'I  Moaned While Cosplaying Your Waifu',
+        src: "/src/assets/pexels-caio-mantovani-97605853-13815186.jpg"
+      },
+      {
+        id: 4,
+        caption: 'Bunny Girl Tease', 
+        src: "/src/assets/pexels-cottonbro-3778934.jpg"
+      },
+      {
+        id: 5,
+        caption: 'Succubus Temptation',
+        src: "/src/assets/pexels-cottonbro-5645101.jpg"
+      },
+      {
+        id: 6,
+        caption: 'Neko Nip Slip', 
+        src: "/src/assets/pexels-cottonbro-8732107.jpg"
+      }
+    ].map(item => (
+      <div
+        key={item.id}
+        className="relative rounded-xl overflow-hidden aspect-square cursor-pointer group"
+        onMouseEnter={() => setHoveredItem(item.id)}
+        onMouseLeave={() => setHoveredItem(null)}
+      >
+        <div className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${hoveredItem === item.id ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="text-4xl animate-bounce">🔓</div>
+        </div>
+        <img
+          src={item.src}
+          alt={item.caption}
+          className={`w-full h-full object-cover transition-transform duration-300 ${hoveredItem === item.id ? 'scale-110' : 'scale-100'}`}
+        />
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+          <p className="font-bold">{item.caption}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
           {/* Erotic Add-Ons */}
           <section className="container mx-auto px-4 py-12">

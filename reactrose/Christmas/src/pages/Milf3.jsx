@@ -38,44 +38,57 @@ const ChristmasCreator = () => {
     alert("Thank you for your message! I'll get back to you soon. 🎄✨");
   };
 
-  const galleryItems = [
-    {
-      id: 1,
-      title: "Winter Wonderland",
-      description: "Sultry holiday moments in cozy winter settings",
-      image: "linear-gradient(135deg, #2c5530, #0f3460)"
-    },
-    {
-      id: 2,
-      title: "Mistletoe Magic",
-      description: "Intimate encounters under the mistletoe",
-      image: "linear-gradient(135deg, #8B0000, #006400)"
-    },
-    {
-      id: 3,
-      title: "Naughty or Nice",
-      description: "Playful Christmas-themed content",
-      image: "linear-gradient(135deg, #B22222, #228B22)"
-    },
-    {
-      id: 4,
-      title: "Santa's Secret",
-      description: "Exclusive behind-the-scenes holiday moments",
-      image: "linear-gradient(135deg, #DC143C, #2F4F4F)"
-    },
-    {
-      id: 5,
-      title: "Golden Christmas",
-      description: "Luxurious holiday elegance and glamour",
-      image: "linear-gradient(135deg, #FFD700, #8B4513)"
-    },
-    {
-      id: 6,
-      title: "Snowy Seduction",
-      description: "Sensual winter scenes and cozy moments",
-      image: "linear-gradient(135deg, #4682B4, #708090)"
-    }
-  ];
+const galleryItems = [
+  {
+    id: 1,
+    title: "Winter Wonderland",
+    description: "Cozy holiday moments in winter settings",
+    image: "linear-gradient(135deg, #2c5530, #0f3460)",
+    creator: "Emma Snow",
+    creatorImage: "/src/assets/girl-5864172_1280.jpg"
+  },
+  {
+    id: 2,
+    title: "Mistletoe Magic",
+    description: "Festive encounters under the mistletoe",
+    image: "linear-gradient(135deg, #8B0000, #006400)",
+    creator: "Sophia Winter",
+    creatorImage: "/src/assets/pexels-andrea-musto-135941147-20425087.jpg"
+  },
+  {
+    id: 3,
+    title: "Naughty or Nice",
+    description: "Playful Christmas-themed content",
+    image: "linear-gradient(135deg, #B22222, #228B22)",
+    creator: "Isabella Frost",
+    creatorImage: "/src/assets/pexels-caio-mantovani-97605853-13815186.jpg"
+  },
+  {
+    id: 4,
+    title: "Santa's Secret",
+    description: "Behind-the-scenes holiday moments",
+    image: "linear-gradient(135deg, #DC143C, #2F4F4F)",
+    creator: "Mia Holiday",
+    creatorImage: "/src/assets/pexels-cottonbro-3778934.jpg"
+  },
+  {
+    id: 5,
+    title: "Golden Christmas",
+    description: "Luxurious holiday elegance and glamour",
+    image: "linear-gradient(135deg, #FFD700, #8B4513)",
+    creator: "Ava Sparkle",
+    creatorImage: "/src/assets/pexels-cottonbro-5645101.jpg"
+  },
+  {
+    id: 6,
+    title: "Snowy Seduction",
+    description: "Beautiful winter scenes and cozy moments",
+    image: "linear-gradient(135deg, #4682B4, #708090)",
+    creator: "Luna Crystal",
+    creatorImage: "/src/assets/pexels-cottonbro-8732107.jpg"
+  }
+];
+
 
   if (showAgeVerification) {
     return (

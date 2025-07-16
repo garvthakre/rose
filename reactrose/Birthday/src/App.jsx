@@ -1,6 +1,6 @@
 import React from 'react'
  
-import CreatorWebsite from ' ../src/pages/Milf3'
+import CreatorWebsite from '../src/pages/Milf3'
 
 function App() {
   return (
