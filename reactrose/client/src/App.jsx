@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CreatorPortfolio from './pages/Demo'
 
 // Comment out other imports temporarily
-import Valentine from './pages/valentine'
+import Valentine from './pages/Valentine'
 import ChristmasCreator from './pages/Christmas2'
 import LewdWaifuUniverse from './pages/Hentai2'
 import LuxuryCreatorWebsite from './pages/Luxury'
