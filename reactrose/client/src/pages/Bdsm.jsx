@@ -13,7 +13,7 @@ const CreatorBioSite = () => {
   const galleryImages = [
     {
       id: 1,
-      src: " /src/assets/girl-5864172_1280.jpg",
+      src: " public/src/assets/girl-5864172_1280.jpg",
       title: "Elegant Portrait",
       type: "photo",
       premium: false

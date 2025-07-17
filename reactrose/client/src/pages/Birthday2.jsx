@@ -25,21 +25,21 @@ const CreatorWebsite = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/src/assets/girl-5864172_1280.jpg",
+      src: "/girl-5864172_1280.jpg",
       title: "Elegant Portrait",
       type: "photo",
       premium: false
     },
     {
       id: 2,
-      src: "/src/assets/pexels-andrea-musto-135941147-20425087.jpg",
+      src: "/pexels-andrea-musto-135941147-20425087.jpg",
       title: "Artistic Vision",
       type: "photo",
       premium: true
     },
     {
       id: 3,
-      src: "/src/assets/pexels-caio-mantovani-97605853-13815186.jpg",
+      src: "/pexels-caio-mantovani-97605853-13815186.jpg",
       title: "Behind the Scenes",
       type: "video",
       premium: false
