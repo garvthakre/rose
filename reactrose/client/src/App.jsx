@@ -11,7 +11,7 @@ import LuxuryCreatorWebsite from './pages/Luxury'
 import CreatorBioSite from './pages/Milf3'
 import CreatorWebsite from './pages/Birthday2'
 import CleanBaddieBio from './pages/Genz'
-import Hentai from './pages/hentai2'
+import Hentai from './pages/Hentai2'
 import NYECreatorWebsite from './pages/Neweve'
 import MiaMonroeSite from './pages/Genz1'
 
