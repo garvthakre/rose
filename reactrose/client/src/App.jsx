@@ -22,7 +22,7 @@ function App() {
         <Routes>
           {/* Test with only Demo page first */}
           <Route path="/milf" element={<CreatorBioSite />} />
-          <Route path="/demo" element={<CreatorPortfolio />} />
+          <Route path="/" element={<CreatorPortfolio />} />
           
           {/* Comment out other routes temporarily */}
            <Route path="/valentine" element={<Valentine />} />
