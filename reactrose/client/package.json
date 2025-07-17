@@ -8,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-      "start": "react-scripts start",
-  "build": "react-scripts build"
+       
   },
   "dependencies": {
     "lucide-react": "^0.525.0",
